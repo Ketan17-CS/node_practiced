@@ -9,7 +9,7 @@ const changePriority = function (a, b) {
     return b;
 }
 
-// Export the todoList array and other modules
+// Export the todoList array and other modules.
 module.exports = {
     todoList,
     changePriority
