@@ -23,6 +23,7 @@ const logRequest = (req, res, next) => {
 app.use(logRequest);
 
 const localAuthMiddleware = passport.authenticate('local', { session: false })
+
 app.get('/', (req, res) => {
     res.send("welcome to the hotel ... \nhow can I help you?");
 })
@@ -32,7 +33,7 @@ const personRoutes = require('./routes/personRoutes');
 const menuItemRoutes = require('./routes/menuItemRoutes');
 
 // Use the routes
-app.use('/person', localAuthMiddleware, personRoutes);
+app.use('/person', personRoutes);
 app.use('/menu', menuItemRoutes);
 
 // Start the server
